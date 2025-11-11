@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1000;
     private MediaProjectionManager projectionManager;
     private TextView tvInfo;
+    public Button dashpage;
 
 
     @Override
@@ -56,14 +57,22 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Wi-Fi Screen Cast");
         }
 
+         dashpage =findViewById(R.id.dashpage);
+
+        dashpage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, dashboard.class);
+                startActivity(intent);
+
+            }
+        });
+
         Button btnStart = findViewById(R.id.btnStart);
         Button btnStop = findViewById(R.id.btnStop);
         tvInfo = findViewById(R.id.tvInfo);
 
         projectionManager = (MediaProjectionManager) getSystemService(Context.MEDIA_PROJECTION_SERVICE);
-
-
-
 
 
         btnStart.setOnClickListener(v -> {
@@ -72,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intent, REQUEST_CODE);
         });
         btnStop.setOnClickListener(v -> {
-            // 🔹 Stop the screen casting service when user taps Stop
+
             stopService(new Intent(this, ScreenCaptureService.class));
             Toast.makeText(this, "Screen cast stopped", Toast.LENGTH_SHORT).show();
             tvInfo.setText("Your IP will appear here");

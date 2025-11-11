@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/dialog_background"
+    >
+
+   <!-- <ImageView
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dialogimg"
+        android:fitsSystemWindows="true"/>-->
+
+    <TextView
+        android:id="@+id/txtpermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permission Required"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To use the floating tools, the 'Display over other apps' permission is needed."
+        android:textColor="#CCCCCC"
+        android:textSize="15sp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="6dp"
+        android:textAlignment="textStart"
+        android:lineSpacingExtra="2dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You can use tools like brush and webcam after enabling this permission."
+        android:textColor="#CCCCCC"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        android:padding="6dp"
+        android:textAlignment="textStart"
+        android:lineSpacingExtra="2dp"
+        />
+
+    <Button
+        android:id="@+id/btnOpen"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Open"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:backgroundTint="#FF9800"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/rounded_button"/>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:background="@drawable/rounded_button"
+        android:layout_marginTop="8dp" />
+
+
+</LinearLayout>
