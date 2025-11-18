@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardElevation="4dp"
+    android:layout_marginBottom="10dp"
+    android:backgroundTint="@color/tab_unselected"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:id="@+id/containerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="14dp">
+
+        <!-- Top row: question text and expand icon -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question goes here"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/ivExpand"
+                android:layout_marginEnd="8dp" />
+
+            <ImageView
+                android:id="@+id/ivExpand"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentEnd="true"
+                android:contentDescription="expand"
+                android:src="@drawable/downback"
+                android:scaleType="centerInside" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/divider_color"
+            android:visibility="gone" />
+
+        <!-- Answer (initially gone) -->
+        <TextView
+            android:id="@+id/tvAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Answer text. This will be multiple lines when expanded. Add 3-4 sentences or lines."
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

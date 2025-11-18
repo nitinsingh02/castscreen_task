@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/paint_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <!-- Drawing area -->
+    <com.example.celebrareproject.DrawingView
+        android:id="@+id/drawingView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Top rounded toolbar (centered) -->
+    <LinearLayout
+        android:id="@+id/paint_toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom|center"
+        android:background="@drawable/toolbar_bg"
+        android:elevation="8dp"
+        android:gravity="bottom"
+        android:layout_margin="6dp"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/btnPencil"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_penicil"
+                />
+
+            <ImageView
+                android:id="@+id/btnUndo"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_revert"
+                />
+
+            <ImageView
+                android:id="@+id/btnColor"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_palate"
+                />
+
+            <ImageView
+                android:id="@+id/btnClosePaint"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="18dp"
+                android:src="@drawable/ic_close"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+      <!-- Bottom-center color & size panel (hidden by default) -->
+      <LinearLayout
+          android:id="@+id/colorPanel"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:padding="12dp"
+          android:layout_gravity="bottom|center"
+          android:visibility="gone"
+          android:clipToPadding="false">
+
+          <LinearLayout
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:orientation="vertical"
+              android:background="@drawable/panel_bg"
+              android:padding="12dp"
+              android:elevation="10dp">
+
+              <!-- colors row centered -->
+              <LinearLayout
+                  android:id="@+id/colorRow"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:orientation="horizontal"
+                  android:gravity="center">
+
+                  <!-- 8 styled color swatches -->
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_1" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FF3B30" android:tag="#FF3B30"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_2" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FF9500" android:tag="#FF9500"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_3" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFCC00" android:tag="#FFCC00"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_4" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#34C759" android:tag="#34C759"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_5" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#4CD964" android:tag="#4CD964"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_6" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#007AFF" android:tag="#007AFF"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_7" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#5856D6" android:tag="#5856D6"/>
+                  </FrameLayout>
+
+                  <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:layout_margin="6dp">
+                      <View android:id="@+id/color_8" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#000000" android:tag="#000000"/>
+                  </FrameLayout>
+
+              </LinearLayout>
+
+              <!-- stroke size label + slider centered -->
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginTop="10dp"
+                  android:gravity="center_horizontal">
+
+                  <TextView
+                      android:id="@+id/tvStrokeLabel"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Size: 8"
+                      android:textColor="#FFFFFF"
+                      android:textSize="14sp"
+                      android:layout_marginBottom="6dp"/>
+
+                  <SeekBar
+                      android:id="@+id/seekStroke"
+                      android:layout_width="280dp"
+                      android:layout_height="wrap_content"
+                      android:max="60"
+                      android:progress="8" />
+              </LinearLayout>
+          </LinearLayout>
+      </LinearLayout>
+</FrameLayout>

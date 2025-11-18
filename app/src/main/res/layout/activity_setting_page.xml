@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0E17"
+    android:fitsSystemWindows="true"
+    tools:context=".settingPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="24dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:paddingStart="6dp"
+                android:paddingEnd="12dp"
+                android:background="@android:color/transparent"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_back_24"
+                    android:layout_gravity="start"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFFFF"
+                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center_vertical" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- Top items -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:id="@+id/first"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_question"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tutorial_faq"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_diamond"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_mirror_pro"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/general"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#877B17"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="14dp"/>
+
+            <LinearLayout
+                android:id="@+id/language_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvLanguageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Language"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="20dp"/>
+
+                <TextView
+                    android:id="@+id/tvLanguageValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_english"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="6dp"/>
+
+
+            </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/lytFeedback"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_bugs"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="6dp"/>
+
+
+
+
+</LinearLayout>
+
+
+
+            <!-- ... other existing textviews ... -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/share_subtitle"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"/>
+
+            <!-- ===== Share Card (responsive, looks good in both orientations) ===== -->
+            <LinearLayout
+                android:id="@+id/share_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="14dp"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:elevation="4dp">
+
+
+                <!-- parent layout where you want to place the thumbnails -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+                  <LinearLayout
+                      android:background="@drawable/rounded_image_bg"
+                      android:id="@+id/thumbnails_row"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="horizontal">
+
+
+
+                          <RelativeLayout
+                              android:layout_gravity="start"
+                              android:id="@+id/btnShareMessenger"
+                              android:layout_marginLeft="5dp"
+                              android:layout_width="80dp"
+                              android:layout_height="80dp">
+
+                              <ImageView
+                                  android:id="@+id/img1"
+                                  android:layout_width="25dp"
+                                  android:layout_height="25dp"
+                                  android:layout_centerInParent="true"
+                                  android:layout_marginEnd="8dp"
+                                  android:layout_weight="1"
+                                  android:src="@drawable/ic_messenger" />
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/messenger"
+                                  android:textColor="#FFFFFF"
+                                  android:layout_marginBottom="6dp"
+                                  android:layout_alignParentBottom="true"
+                                  android:layout_centerInParent="true"/>
+
+
+                          </RelativeLayout>
+
+
+                          <RelativeLayout
+                              android:layout_gravity="left"
+                              android:id="@+id/btnShareTelegram"
+
+                              android:layout_width="80dp"
+                              android:layout_height="80dp">
+                              <ImageView
+                                  android:id="@+id/img2"
+                                  android:layout_width="25dp"
+                                  android:layout_height="25dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginEnd="8dp"
+                                  android:scaleType="centerCrop"
+                                  android:layout_centerInParent="true"
+                                  android:src="@drawable/ic_telegram"
+                                  android:padding="0dp"/>
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/telegram"
+                                  android:textColor="#FFFFFF"
+                                  android:layout_alignParentBottom="true"
+                                  android:layout_marginBottom="6dp"
+                                  android:layout_centerInParent="true"/>
+
+
+                          </RelativeLayout>
+
+
+                          <RelativeLayout
+                              android:layout_gravity="right"
+                              android:id="@+id/btnShareWhatsapp"
+
+                              android:layout_width="80dp"
+                              android:layout_height="80dp">
+                              <ImageView
+                                  android:id="@+id/img3"
+                                  android:layout_width="25dp"
+                                  android:layout_height="25dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginEnd="8dp"
+                                  android:scaleType="centerCrop"
+                                  android:layout_centerInParent="true"
+                                  android:src="@drawable/ic_whatsapp"
+                                  android:padding="0dp"/>
+
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/whatsapp"
+                                  android:textColor="#FFFFFF"
+                                  android:layout_marginBottom="6dp"
+                                  android:layout_alignParentBottom="true"
+                                  android:layout_centerInParent="true"/>
+
+
+                          </RelativeLayout>
+                          <RelativeLayout
+                              android:layout_gravity="end"
+                              android:id="@+id/btnMore"
+                              android:layout_width="80dp"
+                              android:layout_height="80dp">
+
+                              <ImageView
+                                  android:id="@+id/img4"
+                                  android:layout_width="25dp"
+                                  android:layout_height="25dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginEnd="8dp"
+                                  android:src="@drawable/ic_more"
+                                  android:layout_centerInParent="true"
+                                  android:padding="0dp"/>
+                              <TextView
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="@string/more"
+                                  android:textColor="#FFFFFF"
+                                  android:layout_marginBottom="6dp"
+                                  android:layout_alignParentBottom="true"
+                                  android:layout_centerInParent="true"/>
+
+                          </RelativeLayout>
+
+
+
+                  </LinearLayout>
+            </HorizontalScrollView>
+
+
+
+            </LinearLayout>
+            <!-- ===== end share card ===== -->
+
+            <!-- rest of your About / Privacy / Terms / Version items -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/privacy_policy"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_of_use"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/version_default"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
+
+
+
+
+
+    <!--
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fl_root"
+        android:background="#0D0E17"
+        tools:context=".settingPage">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+
+
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:background="@android:color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/ic_back_24"
+                android:contentDescription="Back"
+                android:layout_gravity="center_vertical"
+                android:padding="6dp" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFFFF"
+                android:layout_marginStart="12dp"
+                android:layout_gravity="center_vertical" />
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:id="@+id/first"
+        >
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="2dp"
+            android:src="@drawable/ic_question"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/toolbar"
+            />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="2dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tutorial &amp; FAQ"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"/>
+
+    </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                >
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/ic_diamond"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@id/toolbar"
+                    />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All Mirror Pro"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"/>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:textColor="#877B17"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="14dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto (English)"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feedback"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report bugs and tell us what to improve"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share All Mirror with your Friends."
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="6dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="50dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Privacy Policy"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Terms of Use"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Version 1.0.0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+
+        </ScrollView>
+    </FrameLayout>-->

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- SELECTED DOT -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <size
+                android:width="18dp"
+            android:height="4dp"/>
+            <corners android:radius="4dp"/>
+            <solid android:color="@color/orange"/>
+        </shape>
+    </item>
+
+    <!-- UNSELECTED DOT -->
+    <item>
+        <shape android:shape="rectangle">
+            <size
+                android:width="6dp"
+                android:height="3dp"/>
+            <corners android:radius="4dp"/>   <!-- flat rounded -->
+            <solid android:color="#80FFFFFF"/> <!-- light grey/white 50% -->
+        </shape>
+    </item>
+
+</selector>

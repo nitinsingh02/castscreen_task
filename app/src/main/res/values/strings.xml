@@ -1,3 +1,71 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">celebrareProject</string>
+
+    <string name="language">Language</string>
+    <string name="auto_english">Auto (English)</string>
+    <string name="select_language">Select language</string>
+    <!-- App / screen titles -->
+
+    <string name="settings">Settings</string>
+    <string name="tutorial_faq">Tutorial &amp; FAQ</string>
+    <string name="all_mirror_pro">All Mirror Pro</string>
+
+    <!-- Section headings -->
+    <string name="general">General</string>
+
+
+    <!-- Feedback -->
+    <string name="feedback">Feedback</string>
+    <string name="report_bugs">Report bugs and tell us what to improve</string>
+
+    <!-- Share -->
+    <string name="share">Share</string>
+    <string name="share_subtitle">Share All Mirror with your Friends.</string>
+    <!-- share message: use String.format with package name or app id when using -->
+    <string name="share_app_message">Check out %1$s on Google Play: https://play.google.com/store/apps/details?id=%2$s</string>
+
+    <!-- About / legal -->
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+
+    <!-- Version (you can programmatically set this from BuildConfig if preferred) -->
+    <string name="version_format">Version %1$s</string>
+    <string name="version_default">Version 1.0.0.0</string>
+
+    <!-- Toolbar/back -->
+    <string name="back">Back</string>
+
+    <!-- Share button labels -->
+    <string name="messenger">Messenger</string>
+    <string name="telegram">Telegram</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="more">More</string>
+
+    <!-- accessibility / content descriptions -->
+    <string name="contentdesc_back">Navigate back</string>
+    <string name="contentdesc_messenger">Share via Messenger</string>
+    <string name="contentdesc_telegram">Share via Telegram</string>
+    <string name="contentdesc_whatsapp">Share via WhatsApp</string>
+    <string name="contentdesc_more">More share options</string>
+
+    <!-- Generic labels -->
+    <string name="select">Select</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- If you want to set default values in code, use these keys -->
+    <string name="default_language_code">en</string>
+
+
+    <string name="feedback_title">Send Feedback</string>
+    <string name="feedback_hint">Write your feedback here...</string>
+    <string name="feedback_cancel">Cancel</string>
+    <string name="feedback_send">Send</string>
+    <string name="no_email_app">No email app found on this device.</string>
+    <string name="feedback_email_subject">App Feedback</string>
+    <string name="feedback_email_to">support@yourdomain.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string> <!-- replace -->
+
+
 </resources>

@@ -1,0 +1,41 @@
+<resources>
+    <!-- Visible language names (these should be translated into each language in their respective values-xx folders if you want full translation) -->
+    <string-array name="language_names">
+        <item>Auto (English)</item>
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Spanish</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Chinese (Simplified)</item>
+        <item>Japanese</item>
+        <item>Arabic</item>
+        <item>Russian</item>
+        <item>Portuguese</item>
+        <item>Bengali</item>
+        <item>Urdu</item>
+        <item>Punjabi</item>
+        <item>Tamil</item>
+        <item>Telugu</item>
+    </string-array>
+
+    <!-- Corresponding locale codes. 'auto' is represented as empty string -->
+    <string-array name="language_codes">
+        <item></item> <!-- auto -->
+        <item>en</item>
+        <item>hi</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>de</item>
+        <item>zh</item>
+        <item>ja</item>
+        <item>ar</item>
+        <item>ru</item>
+        <item>pt</item>
+        <item>bn</item>
+        <item>ur</item>
+        <item>pa</item>
+        <item>ta</item>
+        <item>te</item>
+    </string-array>
+</resources>

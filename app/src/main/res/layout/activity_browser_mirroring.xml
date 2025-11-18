@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,12 @@
     android:background="#0E0E1F"
     android:orientation="vertical"
     tools:context=".browserMirroring">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -20,14 +26,15 @@
         android:layout_height="40dp"
         android:padding="5dp"
         android:layout_marginTop="7dp"
-        android:src="@drawable/baseline_arrow_back_ios_24"/>
+        android:src="@drawable/ic_back_24"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Browser Mirroring"
-        android:textSize="25sp"
-        android:layout_marginTop="8dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="12dp"
         android:textStyle="bold"
         android:textColor="@color/white"/>
 
@@ -35,6 +42,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:background="#D32F2F">
 
         <TextView
@@ -77,38 +85,54 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="25dp"
         android:paddingHorizontal="8dp">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="• Connect to the same Wi-Fi and turn off VPN."
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:layout_marginBottom="10dp"/>
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/top_dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/dot_orange" />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Connect to the same Wi-Fi and turn off VPN."
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="8dp"
+                android:textSize="14sp"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
 
         <!-- Wi-Fi Status -->
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:background="#222222"
+            android:background="@drawable/rounded_button"
             android:padding="10dp"
-            android:layout_marginHorizontal="4dp"
-            android:layout_gravity="center_vertical"
-            android:clipToPadding="false"
-            android:clipChildren="false"
-            android:elevation="2dp"
+            android:layout_marginLeft="18dp"
+            android:gravity="center_vertical"
             android:backgroundTint="#222222"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="4dp">
+            android:layout_marginBottom="10dp">
 
             <ImageView
                 android:id="@+id/broWifi"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_wifi"
+                android:layout_marginLeft="6dp"
                 android:backgroundTint="#00FF88"/>
 
             <TextView
@@ -118,24 +142,47 @@
                 android:text="Wi-Fi: Wi-Fi Connected"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
+                android:layout_marginLeft="6dp"
                 android:paddingStart="8dp"/>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="• Open this website on the other device:"
-            android:textColor="#FFFFFF"
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp"/>
 
-        <!-- URL Box -->
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/bottom_dot"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/dot_orange" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open this website on the other device:"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginBottom="8dp"/>
+
+
+
+        </LinearLayout>
+
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#222222"
             android:padding="10dp"
+            android:layout_marginLeft="18dp"
             android:gravity="center_vertical"
             android:layout_marginBottom="10dp">
 
@@ -144,28 +191,71 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="http://0.0.0.0:5621"
+                android:text="http://0.0.0.0:8080"
                 android:textColor="#FFAA33"
                 android:textSize="14sp"
                 android:singleLine="true"/>
 
             <ImageView
                 android:id="@+id/ivCopy"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="8dp"
                 android:src="@drawable/ic_copy"
-                />
+                android:contentDescription="Copy URL"/>
+
+            <!-- Stop cast button (hidden initially) -->
+            <ImageView
+                android:id="@+id/ivStopCast"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/ic_stop"
+                android:contentDescription="Stop casting"
+                android:visibility="gone"/>
         </LinearLayout>
+
+
+        <!--   &lt;!&ndash; URL Box &ndash;&gt;
+           <LinearLayout
+               android:orientation="horizontal"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="#222222"
+               android:padding="10dp"
+               android:gravity="center_vertical"
+               android:layout_marginBottom="10dp">
+
+               <TextView
+                   android:id="@+id/tvIpAddress"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="http://0.0.0.0:5621"
+                   android:textColor="#FFAA33"
+                   android:textSize="14sp"
+                   android:singleLine="true"/>
+
+               <ImageView
+                   android:id="@+id/ivCopy"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/ic_copy"
+                   />
+           </LinearLayout>-->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The IP address may change every time you connect. Please make sure each number is entered correctly in the browser address bar."
+            android:text="The IP address may change every time you connect. So please make sure each number is entered correctly in the browser address bar."
             android:textColor="#AAAAAA"
-            android:textSize="12sp"
+            android:textSize="11sp"
+            android:maxLines="4"
+            android:lineBreakStyle="strict"
+            android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
             android:lineSpacingExtra="2dp"/>
     </LinearLayout>
 
-
     </LinearLayout>
+    </ScrollView>

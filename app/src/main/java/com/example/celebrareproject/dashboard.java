@@ -1,7 +1,13 @@
 package com.example.celebrareproject;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -9,6 +15,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -23,6 +30,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -35,10 +43,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class dashboard extends AppCompatActivity {
 
     private TextView tvWifiStatus;
-    private ImageView ivWifiStatus;
+    private ImageView ivWifiStatus, ivShare, btnSetting;
     private LinearLayout wifiLayout;
-    private RelativeLayout backorange , backglobal;
+    private RelativeLayout backorange, backglobal;
     private SwitchCompat switchFloatingTools;
+    private Button btnTutorial;
+
+    private FrameLayout main;
 
     private boolean isUserInteracting = false;
 
@@ -50,9 +61,65 @@ public class dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
 
+        WindowCompat.setDecorFitsSystemWindows(getWindow(),
+                false);
+        final View main = findViewById(R.id.main);
+
+        ViewCompat.setOnApplyWindowInsetsListener(main, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        getWindow().setStatusBarColor(Color.TRANSPARENT);
+
+        WindowInsetsControllerCompat wic = new WindowInsetsControllerCompat(getWindow(), main);
+
+        wic.setAppearanceLightStatusBars(false);
+
+       /* ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });*/
+
         overlaySwitch = findViewById(R.id.switch_overlay);
+        ivShare = findViewById(R.id.ivShare);
+        btnSetting = findViewById(R.id.btnSetting);
+        btnTutorial = findViewById(R.id.btnTutorial);
+
+        btnSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(dashboard.this, settingPage.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTutorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(dashboard.this, tutorialPage.class);
+                startActivity(intent);
+            }
+        });
+
+        ivShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Your App Link (Play Store link or website link)
+                String appLink = "https://play.google.com/store/apps/details?id=com.example.yourapp";
+
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Check out this App!");
+                shareIntent.putExtra(Intent.EXTRA_TEXT, "I found an amazing screen mirroring app to cast phone to TV! Download it here:\n" + appLink);
+
+                startActivity(Intent.createChooser(shareIntent, "Share App using"));
+            }
+        });
 
         overlaySwitch.setChecked(Settings.canDrawOverlays(this));
         overlaySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

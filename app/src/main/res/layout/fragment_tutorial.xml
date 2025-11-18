@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tutorial_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Centered card (now contains only ViewPager2) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/tutorial_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+
+            app:cardElevation="6dp"
+            android:foreground="?attr/selectableItemBackground">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="0dp">
+
+                <!-- ViewPager2 fills the card: each page will be the full card content -->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/tutorialViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    />
+
+                <!-- Left arrow -->
+                <ImageView
+                    android:id="@+id/ivPrev"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="6dp"
+                    android:src="@drawable/ic_next"
+                    android:background="@drawable/circle_bg_transparent"
+                    android:padding="8dp"
+                    android:visibility="gone" />
+
+                <!-- Right arrow -->
+                <ImageView
+                    android:id="@+id/ivNext"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginEnd="6dp"
+                    android:src="@drawable/ic_right"
+                    android:background="@drawable/circle_bg_transparent"
+                    android:padding="8dp" />
+
+                <!-- Dots under pager (overlay) -->
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabIndicator="@null"
+                    app:tabGravity="center"
+                    app:tabMode="fixed"/>
+            <!--    <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabDots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    app:tabIndicatorHeight="0dp"
+                    app:tabGravity="center"
+                    app:tabMode="fixed" />-->
+
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- helper text under card -->
+        <TextView
+            android:id="@+id/tvHelper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tutorial_card"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="2dp"
+            android:text="If you have finished the 3 steps above but still can't connect to your device, check the supported devices list."
+            android:textColor="@color/helper_text"
+            android:textSize="12sp" />
+
+        <!-- Big orange button at bottom -->
+        <Button
+            android:id="@+id/btnSupported"
+            android:layout_width="280dp"
+            android:layout_height="56dp"
+            android:layout_below="@+id/tvHelper"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Supported Devices"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@drawable/btn_orange_rounded" />
+
+    </RelativeLayout>
+</FrameLayout>

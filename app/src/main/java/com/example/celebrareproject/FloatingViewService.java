@@ -3,6 +3,7 @@ package com.example.celebrareproject;
 import android.app.Service;
 import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.media.projection.MediaProjectionManager;
 import android.os.IBinder;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -25,6 +26,10 @@ public class FloatingViewService extends Service {
     private long touchStartTime;
     private static final int CLICK_THRESHOLD = 200;
 
+    private static final int REQUEST_CODE_PERMISSIONS = 101;
+
+
+
     @Override
     public IBinder onBind(Intent intent) {
         return null; // Not binding
@@ -35,6 +40,7 @@ public class FloatingViewService extends Service {
         super.onCreate();
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+
 
         floatingView = LayoutInflater.from(this).inflate(R.layout.layout_floating_button, null);
 
@@ -96,8 +102,33 @@ public class FloatingViewService extends Service {
             isMenuVisible = false;
         });
 
-        imgEdit.setOnClickListener(v -> Toast.makeText(this, "Edit clicked", Toast.LENGTH_SHORT).show());
-        imgVideo.setOnClickListener(v -> Toast.makeText(this, "Video clicked", Toast.LENGTH_SHORT).show());
+        imgEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // start paint overlay service (assumes overlay permission already granted)
+                Intent serviceIntent = new Intent(getApplicationContext(), FloatingPaintService.class);
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    startForegroundService(serviceIntent);
+                } else {
+                    startService(serviceIntent);
+                }
+            }
+        });
+        imgVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                requestPermissions();
+                if (checkPermissions()) {
+                    startCameraService();
+                    Toast.makeText(FloatingViewService.this, "clicked", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    requestPermissions();
+                    Toast.makeText(FloatingViewService.this, "Video clicked", Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
         imgHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -107,6 +138,7 @@ public class FloatingViewService extends Service {
             }
         });
     }
+
 
     private void toggleMenu() {
         if (isMenuVisible) {
@@ -121,5 +153,27 @@ public class FloatingViewService extends Service {
     public void onDestroy() {
         super.onDestroy();
         if (floatingView != null) windowManager.removeView(floatingView);
+    }
+
+    private boolean checkPermissions() {
+        return android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.M ||
+                (checkSelfPermission(android.Manifest.permission.CAMERA) == android.content.pm.PackageManager.PERMISSION_GRANTED &&
+                        checkSelfPermission(android.Manifest.permission.RECORD_AUDIO) == android.content.pm.PackageManager.PERMISSION_GRANTED &&
+                        checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == android.content.pm.PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestPermissions() {
+        Intent intent = new Intent(getApplicationContext(), PermissionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
+
+    private void startCameraService() {
+        Intent serviceIntent = new Intent(getApplicationContext(), FloatingCameraService.class);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            startForegroundService(serviceIntent);
+        } else {
+            startService(serviceIntent);
+        }
     }
 }
