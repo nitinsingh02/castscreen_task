@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -58,12 +59,24 @@ public class dashboard extends AppCompatActivity {
     private Switch overlaySwitch;
     private static final int REQUEST_OVERLAY_PERMISSION = 1234;
 
+    public static final String ACTION_LOCALE_CHANGED = "com.example.celebrareproject.ACTION_LOCALE_CHANGED";
+
+
+    private final BroadcastReceiver localeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Recreate activity to apply new locale resources
+            recreate();
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dashboard);
 
+        LocalBroadcastManager.getInstance(this)
+                .registerReceiver(localeReceiver, new IntentFilter(ACTION_LOCALE_CHANGED));
         WindowCompat.setDecorFitsSystemWindows(getWindow(),
                 false);
         final View main = findViewById(R.id.main);
@@ -84,6 +97,8 @@ public class dashboard extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });*/
+
+
 
         overlaySwitch = findViewById(R.id.switch_overlay);
         ivShare = findViewById(R.id.ivShare);
@@ -193,11 +208,11 @@ public class dashboard extends AppCompatActivity {
         NetworkInfo wifiInfo = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 
         if (wifiInfo != null && wifiInfo.isConnected()) {
-            tvWifiStatus.setText("Wi-Fi Connected");
+            tvWifiStatus.setText(getString(R.string.wifi_connectes));
             tvWifiStatus.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
             ivWifiStatus.setImageResource(R.drawable.ic_wifi);
         } else {
-            tvWifiStatus.setText("Wi-Fi Not Connected");
+            tvWifiStatus.setText(getString(R.string.wifi_disconnectes));
             tvWifiStatus.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
             ivWifiStatus.setImageResource(R.drawable.ic_wifi_off);
         }
@@ -265,5 +280,20 @@ public class dashboard extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(localeReceiver);
+        super.onDestroy();
+    }
+
+    // Apply locale to base context so resources are loaded in correct language
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        String lang = LocaleHelper.getPersistedLanguage(newBase);
+        // If Auto (empty) we use system default
+        Context context = LocaleHelper.setLocale(newBase, lang);
+        super.attachBaseContext(context);
     }
 }

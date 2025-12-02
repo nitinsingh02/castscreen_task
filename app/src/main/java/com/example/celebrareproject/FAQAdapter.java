@@ -83,4 +83,11 @@ public class FAQAdapter extends RecyclerView.Adapter<FAQAdapter.ViewHolder> {
             containerLayout = itemView.findViewById(R.id.containerLayout);
         }
     }
+    // inside FAQAdapter
+    public void updateData(List<FAQItem> newList) {
+        this.items.clear();
+        this.items.addAll(newList);
+        notifyDataSetChanged();
+    }
+
 }

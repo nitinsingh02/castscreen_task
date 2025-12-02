@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">celebrareProject</string>
+
+    <!-- Language -->
+    <string name="language">Idioma</string>
+    <string name="auto_english">Automático (English)</string>
+    <string name="select_language">Selecionar idioma</string>
+
+    <!-- App / screen titles -->
+    <string name="settings">Configurações</string>
+    <string name="tutorial_faq">Tutorial e FAQ</string>
+    <string name="all_mirror_pro">All Mirror Pro</string>
+
+    <!-- Section headings -->
+    <string name="general">Geral</string>
+
+    <!-- Feedback -->
+    <string name="feedback">Feedback</string>
+    <string name="report_bugs">Reporte erros e nos diga o que melhorar</string>
+
+    <!-- Share -->
+    <string name="share">Compartilhar</string>
+    <string name="share_subtitle">Compartilhe o All Mirror com seus amigos.</string>
+
+    <!-- Share message -->
+    <string name="share_app_message">
+        Confira %1$s no Google Play: https://play.google.com/store/apps/details?id=%2$s
+    </string>
+
+    <!-- About / legal -->
+    <string name="about">Sobre</string>
+    <string name="privacy_policy">Política de Privacidade</string>
+    <string name="terms_of_use">Termos de Uso</string>
+
+    <!-- Version -->
+    <string name="version_format">Versão %1$s</string>
+    <string name="version_default">Versão 1.0.0.0</string>
+
+    <!-- Toolbar/back -->
+    <string name="back">Voltar</string>
+
+    <!-- Share button labels -->
+    <string name="messenger">Messenger</string>
+    <string name="telegram">Telegram</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="more">Mais</string>
+
+    <!-- Accessibility / content descriptions -->
+    <string name="contentdesc_back">Voltar</string>
+    <string name="contentdesc_messenger">Compartilhar via Messenger</string>
+    <string name="contentdesc_telegram">Compartilhar via Telegram</string>
+    <string name="contentdesc_whatsapp">Compartilhar via WhatsApp</string>
+    <string name="contentdesc_more">Mais opções de compartilhamento</string>
+
+    <!-- Generic labels -->
+    <string name="select">Selecionar</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Default language code -->
+    <string name="default_language_code">en</string>
+
+    <!-- Feedback dialog -->
+    <string name="feedback_title">Enviar Feedback</string>
+    <string name="feedback_hint">Escreva seu feedback aqui...</string>
+    <string name="feedback_cancel">Cancelar</string>
+    <string name="feedback_send">Enviar</string>
+
+    <string name="no_email_app">Nenhum app de e-mail encontrado neste dispositivo.</string>
+    <string name="feedback_email_subject">Feedback do App</string>
+    <string name="feedback_email_to">support@yourdomain.com</string>
+
+    <!-- Placeholder -->
+    <string name="hello_blank_fragment">Olá (fragmento em branco)</string>
+
+<!--    Dashboard-->
+
+    <string name="floating_tools">Ferramentas flutuantes</string>
+    <string name="connect">Conectar</string>
+    <string name="browser_mirroring">Espelhamento do navegador</string>
+    <string name="wifi_connectes">Wi-Fi Conectado</string>
+    <string name="wifi_disconnectes">Wi-Fi Não Conectado</string>
+
+    <!--tutorial-->
+
+    <string name="tutorial">TUTORIAL</string>
+    <string name="faq">PERGUNTAS FREQUENTES</string>
+    <string name="feed_back">Feedback</string>
+
+    <!--fragements-->
+
+    <string name="stepFragment">Se você concluiu os 3 passos acima, mas ainda não consegue conectar ao dispositivo, verifique a lista de dispositivos compatíveis.</string>
+    <string name="supportDevice">Dispositivos compatíveis</string>
+    <string name="firstFragment">Certifique-se de que seu telefone e TV (ou adaptador sem fio) estejam conectados ao mesmo WiFi e desligue o VPN.</string>
+    <string name="secondFragment">Ative a função Miracast Display na sua TV. (Em alguns dispositivos, é necessário ativá-la manualmente nas configurações do sistema).</string>
+    <string name="thirdFragment">Toque no botão Conectar, ative a tela sem fio no seu telefone e aguarde a busca do dispositivo.</string>
+    <string name="fourthFragment">Se você tentou todos os passos mas ainda não funcionou, aqui está outra solução.</string>
+
+
+    <string-array name="faq_questions">
+        <item>Meu celular fica travado em “Conectando” ao parear com a TV.</item>
+        <item>Funcionava antes, mas agora não funciona.</item>
+        <item>Meu dispositivo não é compatível. Por quê?</item>
+        <item>Minha TV é antiga e não tem Wi-Fi.</item>
+        <item>A TV tem som, mas não tem imagem.</item>
+        <item>A conexão é interrompida após algum tempo.</item>
+        <item>Minhas informações pessoais estão seguras?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>- Reinicie o Wi-Fi do celular e tente novamente.\n\n- Desligue a TV e o cabo da tomada, espere 1 minuto e ligue novamente.\n\n- Aproxime o celular da TV.</item>
+        <item>- Se funcionava antes, pode funcionar novamente.\n\n- A maioria dos problemas é resolvida reiniciando os dispositivos.\n\n- Reinicie o celular e a TV e tente mais uma vez.</item>
+        <item>- Isso significa que seu celular pode não suportar espelhamento de tela.\n\n- Você pode usar o XCast para transmitir vídeos, fotos e áudio para a TV.</item>
+        <item>- Se sua TV tem entrada HDMI, recomendamos um receptor externo como Chromecast ou Anycast.</item>
+        <item>- Alguns conteúdos protegidos (Netflix, Disney+, etc.) não podem ser exibidos em dispositivos externos.\n\n- Tente baixar o vídeo ou usar outro aplicativo.</item>
+        <item>- A função Smart Connection pode estar ativada e mudar de rede automaticamente.\n\n- Certifique-se de que o celular e a TV estejam na mesma rede Wi-Fi e com sinal forte.</item>
+        <item>- Não coletamos nenhuma informação pessoal do seu celular.\n\n- Você pode espelhar a tela com total segurança.</item>
+    </string-array>
+
+
+    <!--  browser mirroring page-->
+
+    <string name="browser_mirroring_title">Espelhamento do Navegador</string>
+    <string name="dont_leave_page">Não saia desta página antes de conectar.</string>
+    <string name="wifi_a">Wi-Fi A</string>
+
+    <string name="connect_same_wifi">Conecte-se ao mesmo Wi-Fi e desligue a VPN.</string>
+    <string name="wifi_status">Wi-Fi: Wi-Fi conectado</string>
+
+    <string name="open_this_website">Abra este site no outro dispositivo:</string>
+
+    <string name="ip_address_warning">
+    O endereço IP pode mudar cada vez que você se conecta. Portanto, certifique-se de digitar cada número corretamente na barra de endereço do navegador.
+</string>
+
+
+</resources>

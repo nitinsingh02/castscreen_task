@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/card_image_bg"
-    android:padding="16dp">
+    android:padding="16dp"
+   >
 
     <!-- Row: step number + description -->
     <LinearLayout
@@ -30,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:text="Make sure your phone and TV (Or wireless adapter) connect to the same WiFi and turn off VPN."
+            android:text="@string/firstFragment"
             android:textColor="@color/white"
             android:textSize="15sp" />
     </LinearLayout>

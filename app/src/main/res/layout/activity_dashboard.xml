@@ -109,7 +109,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Connect"
+                    android:text="@string/connect"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:layout_marginTop="8dp"
@@ -137,7 +137,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Browser Mirroring"
+                    android:text="@string/browser_mirroring"
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:layout_marginTop="8dp"
@@ -159,12 +159,12 @@
                     android:layout_height="70dp"
                     android:layout_alignParentStart="true"
                     android:backgroundTint="#1F2A5C"
-                    android:text="Tutorial &amp; FAQ"
+                    android:text="@string/tutorial_faq"
                     android:textColor="@android:color/white" />
 
                 <LinearLayout
                     android:id="@+id/layoutFloatingTools"
-                    android:layout_width="160dp"
+                    android:layout_width="165dp"
                     android:layout_height="60dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
@@ -175,16 +175,16 @@
                     android:padding="8dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="95dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
-                        android:text="Floating tools"
+                        android:text="@string/floating_tools"
                         android:textColor="@android:color/white"
                         android:textSize="14sp" />
 
                     <Switch
-
                         android:id="@+id/switch_overlay"
+                        android:layout_marginLeft="1dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

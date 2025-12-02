@@ -7,7 +7,12 @@
     android:layout_height="match_parent"
     android:background="#0E0E1F"
     android:orientation="vertical"
+    android:id="@+id/mainactivity"
     tools:context=".browserMirroring">
+
+
+
+
 
 
     <LinearLayout
@@ -31,7 +36,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Browser Mirroring"
+        android:text="@string/browser_mirroring"
         android:textSize="20sp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="12dp"
@@ -51,7 +56,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_centerInParent="true"
-            android:text="Don't leave this page before connected."/>
+            android:text="@string/dont_leave_page"/>
 
 
     </RelativeLayout>
@@ -74,7 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Wi-Fi A"
+            android:text="@string/wifi_a"
             android:textColor="#00FFAA"
             android:textSize="16sp"
             android:layout_marginTop="8dp"
@@ -106,7 +111,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Connect to the same Wi-Fi and turn off VPN."
+                android:text="@string/connect_same_wifi"
                 android:textColor="#FFFFFF"
                 android:layout_marginLeft="8dp"
                 android:textSize="14sp"
@@ -165,7 +170,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Open this website on the other device:"
+                android:text="@string/open_this_website"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
                 android:layout_marginLeft="18dp"
@@ -247,7 +252,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The IP address may change every time you connect. So please make sure each number is entered correctly in the browser address bar."
+            android:text="@string/ip_address_warning"
             android:textColor="#AAAAAA"
             android:textSize="11sp"
             android:maxLines="4"
@@ -255,7 +260,33 @@
             android:layout_marginLeft="18dp"
             android:layout_marginTop="4dp"
             android:lineSpacingExtra="2dp"/>
+        <RelativeLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_alignParentStart="true"
+                android:id="@+id/startScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Start Screen Cast "
+                android:background="@drawable/rounded_button"/>
+
+            <Button
+                android:layout_alignParentEnd="true"
+                android:id="@+id/stopScreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop Screen Cast "
+                android:background="@drawable/rounded_button"/>
+
+
+        </RelativeLayout>
+
+
     </LinearLayout>
 
     </LinearLayout>
+
     </ScrollView>

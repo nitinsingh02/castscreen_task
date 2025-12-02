@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">celebrareProject</string>
+
+    <!-- Language -->
+    <string name="language">Sprache</string>
+    <string name="auto_english">Auto (English)</string>
+    <string name="select_language">Sprache auswählen</string>
+
+    <!-- App / screen titles -->
+    <string name="settings">Einstellungen</string>
+    <string name="tutorial_faq">Tutorial &amp; FAQ</string>
+    <string name="all_mirror_pro">All Mirror Pro</string>
+
+    <!-- Section headings -->
+    <string name="general">Allgemein</string>
+
+    <!-- Feedback -->
+    <string name="feedback">Feedback</string>
+    <string name="report_bugs">Melde Fehler und sag uns, was verbessert werden soll</string>
+
+    <!-- Share -->
+    <string name="share">Teilen</string>
+    <string name="share_subtitle">Teile All Mirror mit deinen Freunden.</string>
+
+    <!-- Share message -->
+    <string name="share_app_message">
+        Schau dir %1$s im Google Play Store an: https://play.google.com/store/apps/details?id=%2$s
+    </string>
+
+    <!-- About / legal -->
+    <string name="about">Über uns</string>
+    <string name="privacy_policy">Datenschutzrichtlinie</string>
+    <string name="terms_of_use">Nutzungsbedingungen</string>
+
+    <!-- Version -->
+    <string name="version_format">Version %1$s</string>
+    <string name="version_default">Version 1.0.0.0</string>
+
+    <!-- Toolbar/back -->
+    <string name="back">Zurück</string>
+
+    <!-- Share button labels -->
+    <string name="messenger">Messenger</string>
+    <string name="telegram">Telegram</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="more">Mehr</string>
+
+    <!-- Accessibility / content descriptions -->
+    <string name="contentdesc_back">Zurück navigieren</string>
+    <string name="contentdesc_messenger">Über Messenger teilen</string>
+    <string name="contentdesc_telegram">Über Telegram teilen</string>
+    <string name="contentdesc_whatsapp">Über WhatsApp teilen</string>
+    <string name="contentdesc_more">Weitere Optionen zum Teilen</string>
+
+    <!-- Generic labels -->
+    <string name="select">Auswählen</string>
+    <string name="cancel">Abbrechen</string>
+
+    <!-- Default language code -->
+    <string name="default_language_code">en</string>
+
+    <!-- Feedback dialog -->
+    <string name="feedback_title">Feedback senden</string>
+    <string name="feedback_hint">Schreibe dein Feedback hier...</string>
+    <string name="feedback_cancel">Abbrechen</string>
+    <string name="feedback_send">Senden</string>
+
+    <string name="no_email_app">Keine E-Mail-App auf diesem Gerät gefunden.</string>
+    <string name="feedback_email_subject">App-Feedback</string>
+    <string name="feedback_email_to">support@yourdomain.com</string>
+
+    <!-- Placeholder -->
+    <string name="hello_blank_fragment">Hallo (leeres Fragment)</string>
+
+    <!--Dasboard-->
+
+    <string name="floating_tools">Schwebende Werkzeuge</string>
+    <string name="connect">Verbinden</string>
+    <string name="browser_mirroring">Browser-Spiegelung</string>
+    <string name="wifi_connectes">WLAN Verbunden</string>
+    <string name="wifi_disconnectes">WLAN Nicht Verbunden</string>
+
+    <!--tutorialPage-->
+
+    <string name="feed_back">Feedback</string>
+    <string name="tutorial">TUTORIAL</string>
+    <string name="faq">HÄUFIG GESTELLTE FRAGEN</string>
+
+    <!--fragment-->
+
+    <string name="stepFragment">Wenn du die 3 Schritte oben abgeschlossen hast, dich aber immer noch nicht verbinden kannst, überprüfe die Liste der unterstützten Geräte.</string>
+    <string name="supportDevice">Unterstützte Geräte</string>
+    <string name="firstFragment">Stelle sicher, dass dein Handy und dein TV (oder drahtloser Adapter) mit dem gleichen WLAN verbunden sind und VPN ausgeschaltet ist.</string>
+    <string name="secondFragment">Aktiviere die Miracast-Anzeige auf deinem TV. (Auf einigen Geräten muss dies manuell in den Systemeinstellungen aktiviert werden).</string>
+    <string name="thirdFragment">Tippe auf die Schaltfläche Verbinden, aktiviere die drahtlose Anzeige auf deinem Handy und warte auf die Gerätesuche.</string>
+    <string name="fourthFragment">Wenn du alle Schritte ausprobiert hast, es aber immer noch nicht funktioniert, gibt es hier eine weitere Lösung.</string>
+
+
+    <string-array name="faq_questions">
+        <item>Mein Handy bleibt beim Verbinden mit dem TV hängen.</item>
+        <item>Früher hat es funktioniert, jetzt nicht mehr.</item>
+        <item>Mein Gerät wird nicht unterstützt. Warum?</item>
+        <item>Mein TV ist alt und unterstützt kein Wi-Fi.</item>
+        <item>Der TV hat Ton, aber kein Bild.</item>
+        <item>Die Verbindung wird nach einiger Zeit unterbrochen.</item>
+        <item>Sind meine persönlichen Daten sicher?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>- Starte das WLAN deines Smartphones neu und versuche es erneut.\n\n- Schalte den TV und die Steckdose aus, warte 1 Minute und schalte alles wieder ein.\n\n- Verringere den Abstand zwischen Handy und TV.</item>
+        <item>- Wenn es früher funktionierte, kann es wieder funktionieren.\n\n- Die meisten Probleme lassen sich durch Neustart lösen.\n\n- Starte Handy und TV neu.</item>
+        <item>- Dein Gerät unterstützt möglicherweise kein Screen Mirroring.\n\n- Nutze XCast zum Übertragen von Videos, Fotos und Audio.</item>
+        <item>- Wenn dein TV HDMI hat, nutze ein externes Gerät wie Chromecast oder Anycast.</item>
+        <item>- Manche Inhalte sind durch DRM geschützt (Netflix, Disney+ usw.).\n\n- Lade das Video herunter oder nutze eine andere App.</item>
+        <item>- Smart Connection könnte aktiviert sein und ständig das Netzwerk wechseln.\n\n- Stelle sicher, dass Handy und TV im selben WLAN sind.</item>
+        <item>- Wir sammeln keine persönlichen Daten.\n\n- Du kannst sicher casten.</item>
+    </string-array>
+
+
+    <!--  browser mirroring page-->
+
+
+
+    <string name="browser_mirroring_title">Browser-Spiegelung</string>
+    <string name="dont_leave_page">Verlassen Sie diese Seite nicht, bevor Sie verbunden sind.</string>
+    <string name="wifi_a">WLAN A</string>
+
+    <string name="connect_same_wifi">Verbinden Sie sich mit demselben WLAN und schalten Sie das VPN aus.</string>
+    <string name="wifi_status">WLAN: WLAN verbunden</string>
+
+    <string name="open_this_website">Öffnen Sie diese Website auf dem anderen Gerät:</string>
+
+    <string name="ip_address_warning">
+    Die IP-Adresse kann sich bei jeder Verbindung ändern. Stellen Sie daher sicher, dass jede Zahl in der Adressleiste des Browsers korrekt eingegeben wird.
+</string>
+
+
+
+
+</resources>

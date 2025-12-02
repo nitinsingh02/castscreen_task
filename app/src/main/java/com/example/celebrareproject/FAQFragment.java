@@ -1,5 +1,116 @@
 package com.example.celebrareproject;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * FAQFragment loads FAQs from string-array resources so translations work.
+ * It listens for ACTION_LOCALE_CHANGED and reloads the arrays when language changes.
+ */
+public class FAQFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    private FAQAdapter adapter;
+    private List<FAQItem> faqList = new ArrayList<>();
+
+    // Use the same action string your settingPage broadcasts
+    private static final String ACTION_LOCALE_CHANGED = "com.example.celebrareproject.ACTION_LOCALE_CHANGED";
+
+    // Receiver to reload strings when locale changes at runtime
+    private final BroadcastReceiver localeReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // reload arrays from resources and update adapter
+            if (getActivity() == null) return;
+            getActivity().runOnUiThread(() -> {
+                loadFaqData();
+                if (adapter != null) {
+                    adapter.updateData(faqList); // adapter should provide updateData
+                } else {
+                    adapter = new FAQAdapter(faqList);
+                    recyclerView.setAdapter(adapter);
+                }
+            });
+        }
+    };
+
+    public FAQFragment() { }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_f_a_q, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        recyclerView = view.findViewById(R.id.recyclerViewFAQ);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        // load FAQ data from resources and set adapter
+        loadFaqData();
+        adapter = new FAQAdapter(faqList);
+        recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        LocalBroadcastManager.getInstance(requireContext())
+                .registerReceiver(localeReceiver, new IntentFilter(ACTION_LOCALE_CHANGED));
+    }
+
+    @Override
+    public void onStop() {
+        try {
+            LocalBroadcastManager.getInstance(requireContext()).unregisterReceiver(localeReceiver);
+        } catch (Exception ignored) {}
+        super.onStop();
+    }
+
+    /**
+     * Loads FAQ questions and answers from string-array resources.
+     * Arrays must be present in each locale and have equal lengths.
+     */
+    private void loadFaqData() {
+        faqList.clear();
+
+        String[] questions = getResources().getStringArray(R.array.faq_questions);
+        String[] answers = getResources().getStringArray(R.array.faq_answers);
+
+        int n = Math.min(questions.length, answers.length);
+        for (int i = 0; i < n; i++) {
+            faqList.add(new FAQItem(questions[i], answers[i]));
+        }
+    }
+}
+
+
+
+
+
+/*
+package com.example.celebrareproject;
+
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,3 +167,4 @@ public class FAQFragment extends Fragment {
         return list;
     }
 }
+*/

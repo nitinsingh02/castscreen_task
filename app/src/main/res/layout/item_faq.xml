@@ -6,7 +6,6 @@
     android:layout_height="wrap_content"
     card_view:cardElevation="4dp"
     android:layout_marginBottom="10dp"
-    android:backgroundTint="@color/tab_unselected"
     android:foreground="?attr/selectableItemBackground">
 
     <LinearLayout

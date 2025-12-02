@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">celebrareProject</string>
+
+    <!-- Language -->
+    <string name="language">भाषा</string>
+    <string name="auto_english">ऑटो (English)</string>
+    <string name="select_language">भाषा चुनें</string>
+
+    <!-- App / screen titles -->
+    <string name="settings">सेटिंग्स</string>
+    <string name="tutorial_faq">ट्यूटोरियल और सामान्य प्रश्न</string>
+    <string name="all_mirror_pro">ऑल मिरर प्रो</string>
+
+    <!-- Section headings -->
+    <string name="general">जनरल</string>
+
+    <!-- Feedback -->
+    <string name="feedback">फीडबैक</string>
+    <string name="report_bugs">बग रिपोर्ट करें और हमें बताएं कि क्या सुधारना है</string>
+
+    <!-- Share -->
+    <string name="share">शेयर करें</string>
+    <string name="share_subtitle">अपने दोस्तों के साथ ऑल मिरर साझा करें।</string>
+
+    <!-- Share message -->
+    <string name="share_app_message">
+        %1$s को गूगल प्ले पर देखें: https://play.google.com/store/apps/details?id=%2$s
+    </string>
+
+    <!-- About / legal -->
+    <string name="about">हमारे बारे में</string>
+    <string name="privacy_policy">प्राइवेसी पॉलिसी</string>
+    <string name="terms_of_use">उपयोग की शर्तें</string>
+
+    <!-- Version -->
+    <string name="version_format">संस्करण %1$s</string>
+    <string name="version_default">संस्करण 1.0.0.0</string>
+
+    <!-- Toolbar/back -->
+    <string name="back">वापस</string>
+
+    <!-- Share button labels -->
+    <string name="messenger">मैसेंजर</string>
+    <string name="telegram">टेलीग्राम</string>
+    <string name="whatsapp">व्हाट्सऐप</string>
+    <string name="more">अन्य</string>
+
+    <!-- Accessibility / content descriptions -->
+    <string name="contentdesc_back">वापस जाएं</string>
+    <string name="contentdesc_messenger">मैसेंजर से शेयर करें</string>
+    <string name="contentdesc_telegram">टेलीग्राम से शेयर करें</string>
+    <string name="contentdesc_whatsapp">व्हाट्सऐप से शेयर करें</string>
+    <string name="contentdesc_more">अन्य शेयर विकल्प</string>
+
+    <!-- Generic labels -->
+    <string name="select">चुनें</string>
+    <string name="cancel">रद्द करें</string>
+
+    <!-- Default language code -->
+    <string name="default_language_code">en</string>
+
+    <!-- Feedback dialog -->
+    <string name="feedback_title">फीडबैक भेजें</string>
+    <string name="feedback_hint">अपना फीडबैक यहाँ लिखें...</string>
+    <string name="feedback_cancel">रद्द करें</string>
+    <string name="feedback_send">भेजें</string>
+
+    <string name="no_email_app">इस डिवाइस पर कोई ईमेल ऐप नहीं मिला।</string>
+    <string name="feedback_email_subject">ऐप फीडबैक</string>
+    <string name="feedback_email_to">support@yourdomain.com</string>
+
+    <!-- Placeholder -->
+    <string name="hello_blank_fragment">नमस्ते (रिक्त फ्रैगमेंट)</string>
+
+   <!-- dashboard-->
+
+    <string name="floating_tools">फ़्लोटिंग टूल्स</string>
+    <string name="connect">कनेक्ट</string>
+    <string name="browser_mirroring">ब्राउज़र मिररिंग</string>
+    <string name="wifi_connectes">वाई-फाई जुड़ा हुआ है</string>
+    <string name="wifi_disconnectes">वाई-फाई जुड़ा नहीं है</string>
+
+ <!--   tutorialPage-->
+    <string name="tutorial">ट्यूटोरियल</string>
+    <string name="faq">सामान्य प्रश्न</string>
+    <string name="feed_back">प्रतिक्रिया</string>
+
+    <!--fragements-->
+
+    <string name="stepFragment">यदि आपने ऊपर दिए गए 3 चरण पूरे कर लिए हैं लेकिन फिर भी डिवाइस से कनेक्ट नहीं हो पा रहे हैं, तो समर्थित डिवाइस सूची देखें।</string>
+    <string name="supportDevice">समर्थित डिवाइस</string>
+    <string name="firstFragment">सुनिश्चित करें कि आपका फ़ोन और टीवी (या वायरलेस एडेप्टर) एक ही वाई-फाई से जुड़े हों और VPN बंद हो।</string>
+    <string name="secondFragment">अपने टीवी पर Miracast Display फ़ंक्शन सक्षम करें। (कुछ डिवाइसों पर इसे मैन्युअल रूप से सक्षम करना पड़ता है, सिस्टम सेटिंग्स में जाँचें)।</string>
+    <string name="thirdFragment">कनेक्ट बटन पर टैप करें, अपने फ़ोन पर वायरलेस डिस्प्ले सक्षम करें और डिवाइस खोजने की प्रतीक्षा करें।</string>
+    <string name="fourthFragment">यदि आपने सभी चरणों को आज़मा लिया है लेकिन अभी भी समस्या है, तो यहाँ एक और समाधान है।</string>
+
+
+    <string-array name="faq_questions">
+        <item>मेरे फ़ोन का TV से कनेक्टिंग पर फँस जाता है।</item>
+        <item>पहले काम करता था, अब क्यों नहीं कर रहा?</item>
+        <item>मेरे डिवाइस को सपोर्ट नहीं किया जा रहा है। ऐसा क्यों?</item>
+        <item>मेरा TV पुराना है और Wi-Fi सपोर्ट नहीं करता।</item>
+        <item>TV में आवाज़ आ रही है लेकिन वीडियो नहीं दिख रहा।</item>
+        <item>कुछ देर बाद कनेक्शन अपने आप टूट जाता है।</item>
+        <item>क्या मेरी व्यक्तिगत जानकारी और मोबाइल डेटा सुरक्षित है?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>- स्मार्टफोन का Wi-Fi बंद करके दोबारा चालू करें और फिर से कनेक्शन ट्राय करें।\n\n- TV और पावर सॉकिट को बंद करें, 1 मिनट रुकें और TV को पुनः चालू करें।\n\n- फ़ोन और TV के बीच की दूरी कम करें।</item>
+        <item>- अगर पहले काम कर रहा था, तो फिर से काम कर सकता है।\n\n- ज़्यादातर कनेक्शन समस्याएँ डिवाइस रीस्टार्ट करने से ठीक हो जाती हैं।\n\n- फ़ोन और TV दोनों को रीस्टार्ट करें और दोबारा कनेक्ट करें।</item>
+        <item>- इसका मतलब है कि आपका फ़ोन स्क्रीन मिररिंग सपोर्ट नहीं करता।\n\n- आप XCast का उपयोग करके वीडियो, ऑडियो और फ़ोटो TV पर कास्ट कर सकते हैं।</item>
+        <item>- अगर आपका TV HDMI सपोर्ट करता है, तो Chromecast या Anycast जैसे एक्सटर्नल रिसीवर का इस्तेमाल करें।</item>
+        <item>- कुछ कंटेंट कॉपीराइट सुरक्षा के कारण तीसरे डिवाइस पर नहीं दिखाया जा सकता (Netflix, Disney+ आदि)।\n\n- वीडियो डाउनलोड करने या किसी दूसरी ऐप में देखने की कोशिश करें।</item>
+        <item>- Wi-Fi सेटिंग में Smart Connection चालू हो सकता है, जो बार-बार नेटवर्क बदलने की कोशिश करता है।\n\n- सुनिश्चित करें कि फ़ोन और TV एक ही Wi-Fi नेटवर्क पर हों और सिग्नल मजबूत हो।</item>
+        <item>- हम आपकी व्यक्तिगत जानकारी या मोबाइल डेटा इकट्ठा नहीं करते।\n\n- आप बिना किसी चिंता के स्क्रीन कास्ट कर सकते हैं।</item>
+    </string-array>
+
+    <!--  browser mirroring page-->
+
+    <string name="browser_mirroring_title">ब्राउज़र मिररिंग</string>
+    <string name="dont_leave_page">कनेक्ट होने से पहले इस पेज को न छोड़ें।</string>
+    <string name="wifi_a">वाई-फाई A</string>
+
+    <string name="connect_same_wifi">उसी वाई-फाई से कनेक्ट करें और VPN बंद करें।</string>
+    <string name="wifi_status">वाई-फाई: वाई-फाई कनेक्टेड</string>
+
+    <string name="open_this_website">दूसरे डिवाइस पर यह वेबसाइट खोलें:</string>
+
+    <string name="ip_address_warning">
+    हर बार कनेक्ट करने पर IP पता बदल सकता है। इसलिए सुनिश्चित करें कि ब्राउज़र की एड्रेस बार में प्रत्येक संख्या सही टाइप की गई हो।
+</string>
+
+
+</resources>

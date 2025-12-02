@@ -1,6 +1,7 @@
 package com.example.celebrareproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import android.app.ActivityManager;
 import android.content.ActivityNotFoundException;
@@ -36,14 +37,20 @@ public class settingPage extends AppCompatActivity {
     LinearLayout lytFeedback;
 
     private LinearLayout languageRow;
-    private TextView tvLanguageValue;
+    private TextView tvLanguageValue , tutorialSetting , privacyPolice, termsUse;
     private String[] languageNames;
     private String[] languageCodes;
+
+    // Use the same action string your dashboard listens for
+    public static final String ACTION_LOCALE_CHANGED = "com.example.celebrareproject.ACTION_LOCALE_CHANGED";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting_page);
+
+        privacyPolice = findViewById(R.id.privacyPolice);
+        termsUse = findViewById(R.id.termsUse);
 
         // find views
         btnShareMessenger = findViewById(R.id.btnShareMessenger);
@@ -51,6 +58,7 @@ public class settingPage extends AppCompatActivity {
         btnShareWhatsapp = findViewById(R.id.btnShareWhatsapp);
         btnMore = findViewById(R.id.btnMore);
         iv_back = findViewById(R.id.iv_back);
+        tutorialSetting = findViewById(R.id.tutorialSetting);
 
         languageRow = findViewById(R.id.language_row);
         tvLanguageValue = findViewById(R.id.tvLanguageValue);
@@ -59,6 +67,37 @@ public class settingPage extends AppCompatActivity {
         Resources res = getResources();
         languageNames = res.getStringArray(R.array.language_names);
         languageCodes = res.getStringArray(R.array.language_codes);
+
+        tutorialSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(settingPage.this, tutorialPage.class);
+                startActivity(intent);
+            }
+        });
+
+        privacyPolice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String url = "https://nitinsingh02.github.io/privacy-policy/privacy-policy.html";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
+
+        termsUse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String url = "https://nitinsingh02.github.io/privacy-policy/privacy-policy.html";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+                
+            }
+        });
 
         // Feedback click -> show dialog
         lytFeedback.setOnClickListener(new View.OnClickListener() {
@@ -80,34 +119,37 @@ public class settingPage extends AppCompatActivity {
         int selectedIndex = findIndexForCode(savedCode);
         tvLanguageValue.setText(languageNames[selectedIndex]);
 
-        // language picker
+
+        // inside onCreate() where you set up languageRow click
         languageRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 int currentIndex = findIndexForCode(LocaleHelper.getPersistedLanguage(settingPage.this));
 
-                androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(settingPage.this);
+                androidx.appcompat.app.AlertDialog.Builder builder =
+                        new androidx.appcompat.app.AlertDialog.Builder(settingPage.this);
                 builder.setTitle(getString(R.string.select_language));
-                builder.setSingleChoiceItems(languageNames, currentIndex, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // which = index selected
-                        String code = languageCodes[which];
+                builder.setSingleChoiceItems(languageNames, currentIndex, (dialog, which) -> {
+                    // which = selected index
+                    String codeToPersist = languageCodes[which]; // may be "" for Auto
 
-                        // persist selection
-                        LocaleHelper.persistLanguage(settingPage.this, code);
+                    // 1) persist user choice
+                    LocaleHelper.persistLanguage(settingPage.this, codeToPersist);
 
-                        // apply locale to current context
-                        LocaleHelper.setLocale(settingPage.this, code);
+                    // 2) apply locale immediately for current context (use empty => system default)
+                    String applyCode = (codeToPersist == null || codeToPersist.isEmpty()) ? "" : codeToPersist;
+                    LocaleHelper.setLocale(settingPage.this, applyCode);
 
-                        // update the UI element
-                        tvLanguageValue.setText(languageNames[which]);
+                    // 3) update displayed label
+                    tvLanguageValue.setText(languageNames[which]);
 
-                        // restart activity to apply to all UI strings (simple approach)
-                        dialog.dismiss();
-                        recreate(); // or restart app for global refresh
-                    }
+                    // 4) notify other activities (in-app) to recreate and pick new locale
+                    LocalBroadcastManager.getInstance(settingPage.this)
+                            .sendBroadcast(new Intent(ACTION_LOCALE_CHANGED));
+
+                    // 5) refresh current settings activity
+                    dialog.dismiss();
+                    recreate();
                 });
 
                 builder.setNegativeButton(android.R.string.cancel, null);
@@ -392,5 +434,20 @@ public class settingPage extends AppCompatActivity {
         });
 
         dialog.show();
+    }
+
+    private void restartApp() {
+        // Get launch intent for the app and restart
+        Intent intent = getBaseContext()
+                .getPackageManager()
+                .getLaunchIntentForPackage(getBaseContext().getPackageName());
+        if (intent != null) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+        } else {
+            // Fallback: finish current activity and kill process
+            finishAffinity();
+            System.exit(0);
+        }
     }
 }

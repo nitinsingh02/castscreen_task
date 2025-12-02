@@ -67,5 +67,65 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string> <!-- replace -->
 
+    // Dashboard Strings
+
+
+    <string name="floating_tools">Floating tools</string>
+    <string name="connect">Connects</string>
+    <string name="browser_mirroring">Browser Mirroring</string>
+    <string name="wifi_connectes">Wi-Fi Connected</string>
+    <string name="wifi_disconnectes">Wi-Fi Not Connected</string>
+
+    <!--TutorialPage-->
+
+    <string name="tutorial">TUTORIAL</string>
+    <string name="faq">FAQ</string>
+    <string name="feed_back">Feedback</string>
+
+    <!--fragements-->
+
+    <string name="stepFragment">If you have finished the 3 steps above but still can\'t connect to your device, check the supported devices list.</string>
+    <string name="supportDevice">Supported Devices</string>
+    <string name="firstFragment">Make sure your phone and TV (Or wireless adapter) connect to the same WiFi and turn off VPN.</string>
+    <string name="secondFragment">Enable the Miracast Display function on your TV.(You need to enable it manually on some devices, go to system settings to check).</string>
+    <string name="thirdFragment">Click the Connect button, enable the wireless display function on your phone and wait for the device searching.</string>
+    <string name="fourthFragment">If you tried all the step but still does not work. Here another solution for you.</string>
+
+
+    <!-- FAQs: questions and answers arrays (ENGLISH) -->
+    <string-array name="faq_questions">
+        <item>My phone gets stuck at Connecting when pairing up with TV.</item>
+        <item>It worked for me before, but it doesn\'t work now.</item>
+        <item>It shows that my device is not supported.</item>
+        <item>My TV is an old TV and does not support Wi-Fi.</item>
+        <item>TV has sound but no picture.</item>
+        <item>Connection will be interrupted after a while.</item>
+        <item>Is my personal information or mobile data absolutely safe?</item>
+    </string-array>
+
+    <string-array name="faq_answers">
+        <item>- Restart the smartphone\'s Wi-Fi and see if the connection succeeds.\n\n- Turn off the TV and socket as well. Wait 1 minute and restart the TV.\n\n- Shorten distance between your phone and the TV; take it up close.</item>
+        <item>- If it worked before, then it can still work. \n\n- Most connection problems can be solved by restarting devices. Restart both your phone and TV and try again.</item>
+        <item>- This means your phone may not support screen mirroring. \n\n- You can use XCast to cast video, audio and photos to TV; with XCast you can still use your phone while casting.</item>
+        <item>- If your TV supports HDMI, we recommend buying an external receiver for mirroring (Chromecast, Anycast, etc.).</item>
+        <item>- Some content uses copyright protection and cannot be displayed on third-party devices (Netflix, Disney+, etc.). Try downloading or using another app.</item>
+        <item>- Try enabling Smart Connection in Wi-Fi settings; it may maintain a better connection. Also ensure phone and TV are on the same Wi-Fi and have strong signal.</item>
+        <item>- We do not monitor or collect personal information from your phone. You can cast without worry. (If you show more details add them here.)</item>
+    </string-array>
+
+  <!--  browser mirroring page-->
+
+    <string name="browser_mirroring_title">Browser Mirroring</string>
+    <string name="dont_leave_page">Don\'t leave this page before connected.</string>
+    <string name="wifi_a">Wi-Fi A</string>
+
+    <string name="connect_same_wifi">Connect to the same Wi-Fi and turn off VPN.</string>
+    <string name="wifi_status">Wi-Fi: Wi-Fi Connected</string>
+
+    <string name="open_this_website">Open this website on the other device:</string>
+
+    <string name="ip_address_warning">The IP address may change every time you connect. So please make sure each number is entered correctly in the browser address bar.</string>
+
+
 
 </resources>

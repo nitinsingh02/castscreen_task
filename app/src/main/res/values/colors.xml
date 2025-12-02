@@ -10,4 +10,7 @@
     <color name="helper_text">#9AA0A6</color>
     <color name="orange">#F57C00</color>
     <color name="card_image_bg">#263238</color>
+
+    <color name="card_supp_text">#BFC7CC</color>
+    <color name="chip_gray">#3A3F47</color>
 </resources>

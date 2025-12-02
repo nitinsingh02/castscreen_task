@@ -66,6 +66,7 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/tutorialSetting"
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="2dp"
                     android:layout_width="wrap_content"
@@ -356,6 +357,7 @@
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="20dp"/>
             <TextView
+                android:id="@+id/privacyPolice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/privacy_policy"
@@ -365,6 +367,7 @@
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="10dp"/>
             <TextView
+                android:id="@+id/termsUse"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/terms_of_use"

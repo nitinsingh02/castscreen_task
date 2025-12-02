@@ -16,7 +16,7 @@ public class splashScreen extends AppCompatActivity {
 
         new Handler().postDelayed(() -> {
             startActivity(new Intent(splashScreen.this, dashboard.class));
-
+            finish();
         }, 2000); // 2 seconds
 
 
